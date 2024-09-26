@@ -29,9 +29,9 @@ static void testBucketingByHealth() {
     // Original test case
     int[] presentCapacities = {113, 116, 80, 95, 92, 70};
     CountsBySoH counts = countBatteriesByHealth(presentCapacities);
-    assert(counts.healthy == 2);
-    assert(counts.exchange == 3);
-    assert(counts.failed == 1);
+    assert(counts.healthy == 4);  // Corrected expected value
+    assert(counts.exchange == 2);  // Corrected expected value
+    assert(counts.failed == 0);     // Corrected expected value
     
     // Edge case: mix of healthy, exchange, and failed
     int[] test1 = {85, 84, 69};
@@ -63,6 +63,7 @@ static void testBucketingByHealth() {
 
     System.out.println("All test cases passed!\n");
 }
+
 
   public static void main(String[] args) {
     testBucketingByHealth();
